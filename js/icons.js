@@ -41,6 +41,10 @@ const ICONS = {
     <path d="M12 7.5v6"/>
     <circle cx="12" cy="16.7" r="0.9" fill="currentColor" stroke="none"/>`,
 
+  parking: `<rect x="3" y="3" width="18" height="18" rx="5"/>
+    <path d="M9 7v10"/>
+    <path d="M9 7h3.5a2.5 2.5 0 0 1 0 5H9"/>`,
+
   back: `<path d="M15 18l-6-6 6-6"/>`,
 
   search: `<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>`,

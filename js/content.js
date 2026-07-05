@@ -185,6 +185,24 @@ const SECTIONS = [
     },
   },
   {
+    id: 'parking',
+    icon: 'parking',
+    accent: 'teal',
+    title: { fi: 'Pysäköinti', en: 'Parking' },
+    teaser: {
+      fi: 'Runsaasti tilaa etupihalla — vain sora-alueelle',
+      en: 'Plenty of space in the front yard — gravel only',
+    },
+    body: {
+      fi: [
+        { type: 'p', text: 'Etupihalla on runsaasti pysäköintitilaa. Pysäköinti sorapinnalle on sallittua, mutta vältäthän pysäköintiä nurmikolla.' },
+      ],
+      en: [
+        { type: 'p', text: 'There’s plenty of parking space in the front yard. Feel free to park on the gravel — please avoid parking on the grass.' },
+      ],
+    },
+  },
+  {
     id: 'climate',
     icon: 'thermometer',
     accent: 'teal',
