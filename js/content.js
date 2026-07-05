@@ -12,7 +12,7 @@
 
 const HOUSE = {
   fi: {
-    name: 'Rauhanvillantie 4',
+    name: 'Rauhanvillantie',
     tagline: 'Ohjekirja',
     welcomeTitle: 'Tervetuloa huvilalle!',
     welcomeText:
@@ -22,10 +22,10 @@ const HOUSE = {
     backLabel: 'Takaisin',
     importantLabel: 'Tärkeää',
     noResults: 'Ei hakutuloksia.',
-    bannerAlt: 'Rauhanvillantie 4 kesäisenä päivänä',
+    bannerAlt: 'Rauhanvillantie kesäisenä päivänä',
   },
   en: {
-    name: 'Rauhanvillantie 4',
+    name: 'Rauhanvillantie',
     tagline: 'House Manual',
     welcomeTitle: 'Welcome to the villa!',
     welcomeText:
@@ -35,7 +35,7 @@ const HOUSE = {
     backLabel: 'Back',
     importantLabel: 'Important',
     noResults: 'No results found.',
-    bannerAlt: 'Rauhanvillantie 4 on a summer day',
+    bannerAlt: 'Rauhanvillantie on a summer day',
   },
 };
 
