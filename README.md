@@ -40,6 +40,7 @@ All guest-facing text lives in `js/content.js`. Each section looks like this:
   id: 'hot-tub',
   icon: 'hotTub',       // key from js/icons.js
   accent: 'coral',      // 'coral' or 'teal'
+  image: 'images/hot-tub.jpg',   // optional hero photo shown at the top of the detail view
   title: { fi: 'Palju', en: 'Hot Tub' },
   teaser: { fi: '…', en: '…' },   // shown on the home card
   body: {
@@ -48,6 +49,8 @@ All guest-facing text lives in `js/content.js`. Each section looks like this:
   },
 },
 ```
+
+`image` is optional — sections without one just show the icon, as before.
 
 Body blocks (mix and match per section):
 
@@ -62,12 +65,19 @@ Body blocks (mix and match per section):
 To add a new section, add an object to the `SECTIONS` array and pick (or add)
 an icon key in `js/icons.js`.
 
-### Adding real photos
+### Adding photos
 
-The original manual references a few photos (e.g. damper positions on the
-fireplace). This version ships without them since no image files were
-available. To add one, drop the image under a new `images/` folder and
-reference it from a `p` block with a normal `<img>` tag, e.g.:
+Most sections (hot tub, kitchen, fireplaces, glass terrace, washing machine)
+have a hero photo at the top of their detail view, set via the section's
+`image` field (see above) and stored under `images/`. To add or replace one:
+
+1. Drop the photo in `images/` (JPEG, roughly 1200px wide is plenty — much
+   larger just slows down the page for guests on hotel wifi).
+2. Set/point `image: 'images/your-file.jpg'` on the section in `js/content.js`.
+
+The original manual also references a couple of in-step photos (e.g. exact
+damper positions on the fireplace) that aren't included yet. To add one of
+those, embed it in a `p` block with a normal `<img>` tag instead:
 
 ```js
 { type: 'p', text: '<img src="images/damper-open.jpg" alt="Chimney damper in the open position">' }

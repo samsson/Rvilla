@@ -378,6 +378,21 @@ button {
   height: 18px;
 }
 
+.detail-photo {
+  max-width: 560px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
+
+.detail-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
 .detail-hero {
   display: flex;
   flex-direction: column;
