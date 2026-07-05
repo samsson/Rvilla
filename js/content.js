@@ -19,6 +19,7 @@ const HOUSE = {
     backLabel: 'Takaisin',
     importantLabel: 'Tärkeää',
     noResults: 'Ei hakutuloksia.',
+    bannerAlt: 'Rauhanvillantie 4 kesäisenä päivänä',
   },
   en: {
     name: 'Rauhanvillantie 4',
@@ -31,6 +32,7 @@ const HOUSE = {
     backLabel: 'Back',
     importantLabel: 'Important',
     noResults: 'No results found.',
+    bannerAlt: 'Rauhanvillantie 4 on a summer day',
   },
 };
 
@@ -47,15 +49,15 @@ const SECTIONS = [
     body: {
       fi: [
         { type: 'p', text: 'Paljun saa lämmitettyä polttopuilla, joita löytyy saunan vierestä kääntöpaikalta. Normaali käyttölämpötila on noin 36–37 °C. Kesäkuumalla vesi on mukavampaa haaleampana.' },
-        { type: 'p', text: 'Paljussa on patruunasuodatin, joka suodattaa vettä 24/7. Lisäksi paljuvettä desinfioidaan aktiivihapen avulla, näin vesi pysyy käyttökunnossa vaihtamatta esimerkiksi koko viikonlopun. Pidemmässä käytössä paljua tulisi myös puhdistaa roskasta sekä monitoroida vedenlaatua. Kysy tarvittaessa.' },
-        { type: 'callout', text: 'Mikäli käytät paljua useamman illan, lisää aktiivihappitabletti kylpykertojen välissä. Tabletteja löytyy uunin yläpuolella olevasta kaapista.' },
+        { type: 'p', text: 'Paljussa on patruunasuodatin, joka suodattaa vettä. Paljuvettä desinfioidaan lisäksi kemiallisesti (esimerkiksi aktiivihapella tai kloorilla), jotta vesi pysyy käyttökunnossa vaihtamatta esimerkiksi koko viikonlopun. Pidemmässä käytössä paljua tulisi myös puhdistaa roskasta sekä monitoroida vedenlaatua. Kysy tarvittaessa.' },
+        { type: 'callout', text: 'Turvallisen käytön varmistamiseksi pidä desinfiointitabletit paljussa ja anna suodattimen käydä koko ajan.' },
         { type: 'p', text: 'Paljun pesu, täyttö ja huolto sisältyvät paljumaksuun.' },
         { type: 'callout', text: 'Uloskirjautuessa / kylpemisen lopettaessa, voit vain nostaa kannen paikalleen.' },
       ],
       en: [
         { type: 'p', text: 'The hot tub can be heated with firewood, which can be found at the parking lot next to the sauna. The normal operating temperature is about 36–37 °C. In summer heat, the water is more comfortable at a rather lukewarm temperature.' },
-        { type: 'p', text: 'The hot tub has a cartridge filter that filters the water 24/7. In addition, the hot tub water is disinfected with active oxygen, so the water remains in good condition without changing, for example, for the whole weekend. For longer use, the hot tub should also be cleaned of debris and the water quality should be monitored. Ask if necessary.' },
-        { type: 'callout', text: 'If you use the hot tub for several evenings, add an active oxygen tablet between baths. The tablets can be found in the kitchen, in the cabinet above the oven.' },
+        { type: 'p', text: 'The hot tub has a cartridge filter that filters the water. The water is also chemically disinfected (for example with active oxygen or chlorine), so it remains in good condition without changing, for example, for the whole weekend. For longer use, the hot tub should also be cleaned of debris and the water quality should be monitored. Ask if necessary.' },
+        { type: 'callout', text: 'For safe operation, keep the disinfectant tablets in the hot tub and leave the filter running at all times.' },
         { type: 'p', text: 'Cleaning, filling and maintenance of the hot tub are included in the hot tub fee.' },
         { type: 'callout', text: 'When checking out / finishing bathing, you can simply lift the cover back into place.' },
       ],
@@ -120,18 +122,18 @@ const SECTIONS = [
     },
     body: {
       fi: [
-        { type: 'p', text: 'Keittiö on lähes täysin varusteltu. Mikroaaltouunia tai ilmafritturia ei ole.' },
+        { type: 'p', text: 'Keittiö on lähes täysin varusteltu. Mikroaaltouuni löytyy, mutta ilmafritturia ei vielä ole.' },
         { type: 'callout', text: 'Aterimet löytyvät sisävetolaatikosta lieden vasemmalta puolelta, ylemmän vetolaatikon takaa.' },
         { type: 'p', text: 'Liesi on erittäin voimakas — tasot yli 9 ja P (pika) polttavat ruoan helposti pohjaan. Liesi lämmittää myös kattilat ja pannut hyvin nopeasti.' },
         { type: 'callout', text: 'Liesituuletin toimii käden heilautuksella tai — huomattavasti helpommin — keittiön pöydällä (lieden lähettyvillä) olevalla kaukosäätimellä.' },
-        { type: 'callout', text: 'Astianpesukoneen tabletteja löytyy uunin yläpuolella olevasta kaapista.' },
+        { type: 'callout', text: 'Astianpesukoneen tabletteja löytyy joko uunin yläpuolella olevasta kaapista tai pesualtaan alla olevasta kaapista.' },
       ],
       en: [
-        { type: 'p', text: 'The kitchen is almost fully equipped. There is no microwave or air fryer.' },
+        { type: 'p', text: 'The kitchen is almost fully equipped. There is a microwave, but still no air fryer.' },
         { type: 'callout', text: 'Cutlery can be found in the inner drawer on the left side of the stove, behind the upper drawer.' },
         { type: 'p', text: 'The stove is very powerful — levels above 9 and P (boost) quickly burn food. It also heats pots and pans very quickly.' },
         { type: 'callout', text: 'The extractor hood works by waving your hand, or — much easier — with the remote control on the kitchen table, near the stove.' },
-        { type: 'callout', text: 'Dishwasher tablets can be found in the cabinet above the oven.' },
+        { type: 'callout', text: 'Dishwasher tablets can be found either in the cabinet above the oven or in the cupboard under the sink.' },
       ],
     },
   },
