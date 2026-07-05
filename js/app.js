@@ -39,6 +39,8 @@
           </div>`;
       case 'note':
         return `<p class="note">${block.text}</p>`;
+      case 'map':
+        return `<div class="map-embed"><iframe src="${block.src}" title="${block.title || 'Map'}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>`;
       case 'steps':
         return `<ol class="steps">${block.items
           .map(

@@ -7,6 +7,8 @@
 //   { type: 'heading', text }         sub-heading inside a section
 //   { type: 'steps', items: [...] }   ordered step list (each item: { text, note? })
 //   { type: 'note', text }            secondary/soft note (e.g. tips, not critical)
+//   { type: 'map', src, title? }      embedded Google Maps iframe (no API key needed,
+//                                      via the ?output=embed query trick)
 
 const HOUSE = {
   fi: {
@@ -36,6 +38,10 @@ const HOUSE = {
     bannerAlt: 'Rauhanvillantie 4 on a summer day',
   },
 };
+
+// No API key needed — Maps supports a plain query-based embed via ?output=embed.
+const RECYCLING_MAP_SRC =
+  'https://www.google.com/maps?q=rinki-ekopiste%20near%20Rauhanvillantie%204%2C%20Tuusula%2C%20Finland&output=embed';
 
 const SECTIONS = [
   {
@@ -265,6 +271,7 @@ const SECTIONS = [
         { type: 'heading', text: 'Muut kierrätettävät' },
         { type: 'p', text: 'Muut kierrätettävät (lasi, metalli ym.) tulee viedä kierrätyspisteelle (ekopiste).' },
         { type: 'p', text: 'Lähimmän ekopisteen löydät osoitteesta <a href="https://rinkiin.fi/lajittelu-kotona/ekopisteet" target="_blank" rel="noopener">rinkiin.fi</a>.' },
+        { type: 'map', src: RECYCLING_MAP_SRC, title: 'Lähin kierrätyspiste' },
       ],
       en: [
         { type: 'heading', text: 'Compost' },
@@ -274,6 +281,7 @@ const SECTIONS = [
         { type: 'heading', text: 'Other recyclables' },
         { type: 'p', text: 'Other recyclables (glass, metal, etc.) need to be taken to a recycling point (ekopiste).' },
         { type: 'p', text: 'Find your nearest recycling point at <a href="https://rinkiin.fi/lajittelu-kotona/ekopisteet" target="_blank" rel="noopener">rinkiin.fi</a>.' },
+        { type: 'map', src: RECYCLING_MAP_SRC, title: 'Nearest recycling point' },
       ],
     },
   },
