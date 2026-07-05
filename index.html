@@ -16,9 +16,19 @@
           <span class="brand-name" id="house-name">Rauhanvillantie 4</span>
           <span class="brand-tagline" id="house-tagline">Ohjekirja</span>
         </div>
-        <div class="lang-switch" role="group" aria-label="Language">
-          <button class="lang-btn" data-lang="fi" type="button">FI</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <div class="header-actions">
+          <div class="theme-switch" role="group" aria-label="Theme">
+            <button class="theme-btn" data-theme="light" type="button">
+              <span id="theme-light-icon"></span>
+            </button>
+            <button class="theme-btn" data-theme="dark" type="button">
+              <span id="theme-dark-icon"></span>
+            </button>
+          </div>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button class="lang-btn" data-lang="fi" type="button">FI</button>
+            <button class="lang-btn" data-lang="en" type="button">EN</button>
+          </div>
         </div>
       </header>
 
@@ -46,15 +56,25 @@
           <button id="back-btn" class="icon-btn" type="button">
             <span id="back-icon"></span>
           </button>
+          <div class="detail-nav">
+            <button id="prev-btn" class="icon-btn" type="button">
+              <span id="prev-icon"></span>
+            </button>
+            <button id="next-btn" class="icon-btn" type="button">
+              <span id="next-icon"></span>
+            </button>
+          </div>
         </div>
-        <div class="detail-photo" id="detail-photo" hidden>
-          <img id="detail-photo-img" src="" alt="" />
+        <div class="detail-content" id="detail-content">
+          <div class="detail-photo" id="detail-photo" hidden>
+            <img id="detail-photo-img" src="" alt="" />
+          </div>
+          <div class="detail-hero">
+            <div class="detail-icon" id="detail-icon"></div>
+            <h2 class="detail-title" id="detail-title"></h2>
+          </div>
+          <div class="detail-body" id="detail-body"></div>
         </div>
-        <div class="detail-hero">
-          <div class="detail-icon" id="detail-icon"></div>
-          <h2 class="detail-title" id="detail-title"></h2>
-        </div>
-        <div class="detail-body" id="detail-body"></div>
       </section>
 
       <footer class="app-footer">Rauhanvillantie 4</footer>
