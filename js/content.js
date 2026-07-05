@@ -248,6 +248,36 @@ const SECTIONS = [
     },
   },
   {
+    id: 'recycling',
+    icon: 'recycle',
+    accent: 'teal',
+    title: { fi: 'Jätehuolto', en: 'Trash & Recycling' },
+    teaser: {
+      fi: 'Komposti, sekajäte ja kierrätyspisteet',
+      en: 'Compost, mixed waste and recycling points',
+    },
+    body: {
+      fi: [
+        { type: 'heading', text: 'Kompostoitava jäte' },
+        { type: 'p', text: 'Pihalla — terassin ovesta ulos ja vasemmalle — on ruskea kompostiastia. Kompostoitava jäte laitetaan tähän astiaan.' },
+        { type: 'heading', text: 'Sekajäte' },
+        { type: 'p', text: 'Sekajäteastia on tien varressa, kiinteistön sisääntulon luona.' },
+        { type: 'heading', text: 'Muut kierrätettävät' },
+        { type: 'p', text: 'Muut kierrätettävät (lasi, metalli ym.) tulee viedä kierrätyspisteelle (ekopiste).' },
+        { type: 'p', text: 'Lähimmän ekopisteen löydät osoitteesta <a href="https://rinkiin.fi/lajittelu-kotona/ekopisteet" target="_blank" rel="noopener">rinkiin.fi</a>.' },
+      ],
+      en: [
+        { type: 'heading', text: 'Compost' },
+        { type: 'p', text: 'Outside — through the terrace door and to the left — there’s a brown compost bin. Compostable waste goes here.' },
+        { type: 'heading', text: 'Mixed waste' },
+        { type: 'p', text: 'The mixed-waste bin is by the road, at the entrance to the property.' },
+        { type: 'heading', text: 'Other recyclables' },
+        { type: 'p', text: 'Other recyclables (glass, metal, etc.) need to be taken to a recycling point (ekopiste).' },
+        { type: 'p', text: 'Find your nearest recycling point at <a href="https://rinkiin.fi/lajittelu-kotona/ekopisteet" target="_blank" rel="noopener">rinkiin.fi</a>.' },
+      ],
+    },
+  },
+  {
     id: 'bed-linen',
     icon: 'bed',
     accent: 'coral',

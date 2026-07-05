@@ -436,6 +436,12 @@ button {
   margin: 0 0 14px;
 }
 
+.detail-body a {
+  color: var(--coral);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .block-heading {
   font-size: 1.05rem;
   font-weight: 700;
