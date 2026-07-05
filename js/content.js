@@ -1,6 +1,7 @@
 // House manual content, bilingual (fi/en).
-// Each section: id, icon key (see icons.js), color accent, title, teaser (card subtitle),
-// and body blocks. Block types:
+// Each section: id, icon key (see icons.js), color accent, optional hero `image`
+// (path under images/, shown at the top of the detail view), title, teaser
+// (card subtitle), and body blocks. Block types:
 //   { type: 'p', text }               plain paragraph
 //   { type: 'callout', text }         highlighted important instruction
 //   { type: 'heading', text }         sub-heading inside a section
@@ -41,6 +42,7 @@ const SECTIONS = [
     id: 'hot-tub',
     icon: 'hotTub',
     accent: 'coral',
+    image: 'images/hot-tub.jpg',
     title: { fi: 'Palju', en: 'Hot Tub' },
     teaser: {
       fi: 'Lämmitys, suodatus ja huolto',
@@ -67,6 +69,7 @@ const SECTIONS = [
     id: 'fireplaces',
     icon: 'flame',
     accent: 'coral',
+    image: 'images/fireplaces.jpg',
     title: { fi: 'Tulipesät', en: 'Fireplaces' },
     teaser: {
       fi: 'Terassin kevyttakka ja olohuoneen varaava takka',
@@ -115,6 +118,7 @@ const SECTIONS = [
     id: 'kitchen',
     icon: 'kitchen',
     accent: 'coral',
+    image: 'images/kitchen.jpg',
     title: { fi: 'Keittiö', en: 'Kitchen' },
     teaser: {
       fi: 'Liesi, liesituuletin ja astianpesukone',
@@ -161,6 +165,7 @@ const SECTIONS = [
     id: 'glass-terrace',
     icon: 'sun',
     accent: 'teal',
+    image: 'images/glass-terrace.jpg',
     title: { fi: 'Lasiterassi', en: 'Glass Terrace' },
     teaser: {
       fi: 'Lämpenee nopeasti auringossa',
@@ -225,6 +230,7 @@ const SECTIONS = [
     id: 'laundry',
     icon: 'washer',
     accent: 'teal',
+    image: 'images/laundry.jpg',
     title: { fi: 'Pyykinpesukone', en: 'Washing Machine' },
     teaser: {
       fi: 'Vesihana avataan pöydän napista',

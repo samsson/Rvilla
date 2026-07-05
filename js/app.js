@@ -11,6 +11,8 @@
     detailBody: document.getElementById('detail-body'),
     detailTitle: document.getElementById('detail-title'),
     detailIcon: document.getElementById('detail-icon'),
+    detailPhoto: document.getElementById('detail-photo'),
+    detailPhotoImg: document.getElementById('detail-photo-img'),
     backBtn: document.getElementById('back-btn'),
     langButtons: document.querySelectorAll('.lang-btn'),
     houseName: document.getElementById('house-name'),
@@ -87,6 +89,15 @@
     els.detailIcon.style.setProperty('--accent', `var(--accent-${section.accent})`);
     els.detailTitle.textContent = section.title[lang];
     els.detailBody.innerHTML = section.body[lang].map(renderBlock).join('');
+
+    if (section.image) {
+      els.detailPhotoImg.src = section.image;
+      els.detailPhotoImg.alt = section.title[lang];
+      els.detailPhoto.hidden = false;
+    } else {
+      els.detailPhoto.hidden = true;
+      els.detailPhotoImg.src = '';
+    }
   }
 
   function showHome() {
