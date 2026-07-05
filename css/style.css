@@ -378,6 +378,30 @@ button {
   height: 18px;
 }
 
+.detail-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.nav-next-icon {
+  transform: rotate(180deg);
+}
+
+.detail-content {
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.detail-content.nav-enter-next {
+  opacity: 0;
+  transform: translateX(14px);
+}
+
+.detail-content.nav-enter-prev {
+  opacity: 0;
+  transform: translateX(-14px);
+}
+
 .detail-photo {
   max-width: 560px;
   margin: 16px auto 0;

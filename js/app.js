@@ -2,6 +2,7 @@
   const LANG_KEY = 'rvilla-lang';
   const defaultLang = (navigator.language || '').toLowerCase().startsWith('fi') ? 'fi' : 'en';
   let lang = localStorage.getItem(LANG_KEY) || defaultLang;
+  let navDirection = 0; // -1 = came from "previous", 1 = came from "next", 0 = no slide animation
 
   const els = {
     root: document.documentElement,
@@ -13,7 +14,10 @@
     detailIcon: document.getElementById('detail-icon'),
     detailPhoto: document.getElementById('detail-photo'),
     detailPhotoImg: document.getElementById('detail-photo-img'),
+    detailContent: document.getElementById('detail-content'),
     backBtn: document.getElementById('back-btn'),
+    prevBtn: document.getElementById('prev-btn'),
+    nextBtn: document.getElementById('next-btn'),
     langButtons: document.querySelectorAll('.lang-btn'),
     houseName: document.getElementById('house-name'),
     houseTagline: document.getElementById('house-tagline'),
@@ -100,6 +104,27 @@
       els.detailPhoto.hidden = true;
       els.detailPhotoImg.src = '';
     }
+
+    if (navDirection !== 0) {
+      const cls = navDirection > 0 ? 'nav-enter-next' : 'nav-enter-prev';
+      els.detailContent.classList.remove('nav-enter-next', 'nav-enter-prev');
+      // Force reflow so the animation restarts even if the same class was just removed.
+      void els.detailContent.offsetWidth;
+      els.detailContent.classList.add(cls);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => els.detailContent.classList.remove(cls));
+      });
+      navDirection = 0;
+    }
+  }
+
+  function goToRelative(delta) {
+    const id = location.hash.replace('#', '');
+    const idx = SECTIONS.findIndex((s) => s.id === id);
+    if (idx === -1) return;
+    const nextIdx = (idx + delta + SECTIONS.length) % SECTIONS.length;
+    navDirection = delta > 0 ? 1 : -1;
+    location.hash = SECTIONS[nextIdx].id;
   }
 
   function showHome() {
@@ -135,6 +160,8 @@
     els.bannerImg.alt = t('bannerAlt');
     els.search.placeholder = t('searchPlaceholder');
     els.backBtn.setAttribute('aria-label', t('backLabel'));
+    els.prevBtn.setAttribute('aria-label', t('prevLabel'));
+    els.nextBtn.setAttribute('aria-label', t('nextLabel'));
     els.langButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.lang === lang));
   }
 
@@ -157,11 +184,47 @@
     showHome();
   });
 
+  els.prevBtn.addEventListener('click', () => goToRelative(-1));
+  els.nextBtn.addEventListener('click', () => goToRelative(1));
+
+  window.addEventListener('keydown', (e) => {
+    if (els.detail.hidden) return;
+    if (e.key === 'ArrowRight') goToRelative(1);
+    else if (e.key === 'ArrowLeft') goToRelative(-1);
+  });
+
+  // Swipe left/right between sections while a detail page is open.
+  let touchStartX = 0;
+  let touchStartY = 0;
+  els.detail.addEventListener(
+    'touchstart',
+    (e) => {
+      const t = e.changedTouches[0];
+      touchStartX = t.clientX;
+      touchStartY = t.clientY;
+    },
+    { passive: true }
+  );
+  els.detail.addEventListener(
+    'touchend',
+    (e) => {
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        goToRelative(dx < 0 ? 1 : -1);
+      }
+    },
+    { passive: true }
+  );
+
   els.search.addEventListener('input', () => renderHome(els.search.value));
 
   window.addEventListener('hashchange', route);
 
   document.getElementById('back-icon').innerHTML = iconSvg('back');
+  document.getElementById('prev-icon').innerHTML = iconSvg('back');
+  document.getElementById('next-icon').innerHTML = iconSvg('back', 'nav-next-icon');
   document.getElementById('search-icon').innerHTML = iconSvg('search');
 
   applyStaticText();
