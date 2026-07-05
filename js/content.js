@@ -188,6 +188,7 @@ const SECTIONS = [
     id: 'parking',
     icon: 'parking',
     accent: 'teal',
+    image: 'images/parking.jpg',
     title: { fi: 'Pysäköinti', en: 'Parking' },
     teaser: {
       fi: 'Runsaasti tilaa etupihalla — vain sora-alueelle',
