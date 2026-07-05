@@ -117,7 +117,15 @@ button {
   color: var(--text-muted);
 }
 
-.lang-switch {
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lang-switch,
+.theme-switch {
   display: flex;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -126,20 +134,38 @@ button {
   flex-shrink: 0;
 }
 
-.lang-btn {
+.lang-btn,
+.theme-btn {
   border: none;
   background: transparent;
-  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
   cursor: pointer;
   color: var(--text-muted);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.lang-btn.active {
+.lang-btn {
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.theme-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.lang-btn.active,
+.theme-btn.active {
   background: var(--coral);
   color: #fff;
 }

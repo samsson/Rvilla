@@ -4,6 +4,11 @@
   let lang = localStorage.getItem(LANG_KEY) || defaultLang;
   let navDirection = 0; // -1 = came from "previous", 1 = came from "next", 0 = no slide animation
 
+  const THEME_KEY = 'rvilla-theme';
+  // null/undefined = no explicit choice yet, follow the system's light/dark preference
+  let theme = localStorage.getItem(THEME_KEY);
+  const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
   const els = {
     root: document.documentElement,
     home: document.getElementById('home-view'),
@@ -19,6 +24,7 @@
     prevBtn: document.getElementById('prev-btn'),
     nextBtn: document.getElementById('next-btn'),
     langButtons: document.querySelectorAll('.lang-btn'),
+    themeButtons: document.querySelectorAll('.theme-btn'),
     houseName: document.getElementById('house-name'),
     houseTagline: document.getElementById('house-tagline'),
     welcomeTitle: document.getElementById('welcome-title'),
@@ -163,6 +169,9 @@
     els.prevBtn.setAttribute('aria-label', t('prevLabel'));
     els.nextBtn.setAttribute('aria-label', t('nextLabel'));
     els.langButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.lang === lang));
+    els.themeButtons.forEach((btn) => {
+      btn.setAttribute('aria-label', t(btn.dataset.theme === 'dark' ? 'themeDarkLabel' : 'themeLightLabel'));
+    });
   }
 
   function setLang(next) {
@@ -175,8 +184,39 @@
     if (section) renderDetail(section);
   }
 
+  function effectiveTheme() {
+    if (theme === 'light' || theme === 'dark') return theme;
+    return darkMediaQuery.matches ? 'dark' : 'light';
+  }
+
+  function applyTheme() {
+    if (theme === 'light' || theme === 'dark') {
+      els.root.dataset.theme = theme;
+    } else {
+      delete els.root.dataset.theme;
+    }
+    const active = effectiveTheme();
+    els.themeButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.theme === active));
+  }
+
+  function setTheme(next) {
+    theme = next;
+    localStorage.setItem(THEME_KEY, theme);
+    applyTheme();
+  }
+
   els.langButtons.forEach((btn) => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  els.themeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => setTheme(btn.dataset.theme));
+  });
+
+  // Keep the toggle in sync if the system theme changes and the guest hasn't
+  // explicitly forced one.
+  darkMediaQuery.addEventListener('change', () => {
+    if (theme !== 'light' && theme !== 'dark') applyTheme();
   });
 
   els.backBtn.addEventListener('click', () => {
@@ -226,8 +266,11 @@
   document.getElementById('prev-icon').innerHTML = iconSvg('back');
   document.getElementById('next-icon').innerHTML = iconSvg('back', 'nav-next-icon');
   document.getElementById('search-icon').innerHTML = iconSvg('search');
+  document.getElementById('theme-light-icon').innerHTML = iconSvg('sun');
+  document.getElementById('theme-dark-icon').innerHTML = iconSvg('moon');
 
   applyStaticText();
+  applyTheme();
   renderHome();
   route();
 })();
