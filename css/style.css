@@ -150,6 +150,22 @@ button {
   padding: 4px 20px 48px;
 }
 
+.hero-banner {
+  margin: 14px 0 4px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 16 / 9;
+  background: var(--border);
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .welcome {
   padding: 20px 2px 8px;
 }
@@ -230,12 +246,20 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-.card:hover,
+/* Scoped to real hover-capable pointers (mouse/trackpad) only. Applying :hover
+   unconditionally on touchscreens makes iOS Safari treat the first tap as
+   "enter hover" and require a second tap to actually fire the click. */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  }
+}
+
 .card:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  outline: none;
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
 }
 
 .card:active {

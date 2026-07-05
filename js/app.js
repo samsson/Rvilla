@@ -19,6 +19,7 @@
     welcomeText: document.getElementById('welcome-text'),
     search: document.getElementById('search-input'),
     noResults: document.getElementById('no-results'),
+    bannerImg: document.getElementById('banner-img'),
   };
 
   function t(field) {
@@ -118,6 +119,7 @@
     els.houseTagline.textContent = t('tagline');
     els.welcomeTitle.textContent = t('welcomeTitle');
     els.welcomeText.textContent = t('welcomeText');
+    els.bannerImg.alt = t('bannerAlt');
     els.search.placeholder = t('searchPlaceholder');
     els.backBtn.setAttribute('aria-label', t('backLabel'));
     els.langButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.lang === lang));
