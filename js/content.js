@@ -50,17 +50,17 @@ const SECTIONS = [
     },
     body: {
       fi: [
-        { type: 'p', text: 'Paljun saa lämmitettyä polttopuilla, joita löytyy saunan vierestä kääntöpaikalta. Normaali käyttölämpötila on noin 36–37 °C. Kesäkuumalla vesi on mukavampaa haaleampana.' },
-        { type: 'p', text: 'Paljussa on patruunasuodatin, joka suodattaa vettä. Paljuvettä desinfioidaan lisäksi kemiallisesti (esimerkiksi aktiivihapella tai kloorilla), jotta vesi pysyy käyttökunnossa vaihtamatta esimerkiksi koko viikonlopun. Pidemmässä käytössä paljua tulisi myös puhdistaa roskasta sekä monitoroida vedenlaatua. Kysy tarvittaessa.' },
+        { type: 'p', text: 'Paljun saa lämmitettyä polttopuilla, joita löytyy saunan vierestä pysäköintialueelta. Normaali käyttölämpötila on noin 36–37 °C. Kesäkuumalla vesi on mukavampaa haaleampana.' },
+        { type: 'p', text: 'Patruunasuodatin ja kemiallinen desinfiointi (aktiivihappi tai kloori) pitävät veden puhtaana täyttökertojen välillä — esimerkiksi koko viikonlopun ajan. Pidemmässä käytössä paljua tulisi myös puhdistaa roskasta sekä monitoroida vedenlaatua. Kysy tarvittaessa.' },
         { type: 'callout', text: 'Turvallisen käytön varmistamiseksi pidä desinfiointitabletit paljussa ja anna suodattimen käydä koko ajan.' },
         { type: 'p', text: 'Paljun pesu, täyttö ja huolto sisältyvät paljumaksuun.' },
         { type: 'callout', text: 'Uloskirjautuessa / kylpemisen lopettaessa, voit vain nostaa kannen paikalleen.' },
       ],
       en: [
         { type: 'heading', text: 'Heating' },
-        { type: 'p', text: 'The hot tub is heated with firewood, stored by the sauna at the turning area. The normal operating temperature is about 36–37 °C — in summer heat, most guests prefer it a little cooler.' },
+        { type: 'p', text: 'The hot tub is heated with firewood, stored by the sauna at the parking area. The normal operating temperature is about 36–37 °C — in summer heat, most guests prefer it a little cooler.' },
         { type: 'heading', text: 'Water care' },
-        { type: 'p', text: 'A cartridge filter keeps the water circulating, and it’s also chemically disinfected (with active oxygen or chlorine) so it stays clean between fills — for example, over a full weekend. If you’re using the tub several days in a row, skim off any debris now and then and keep an eye on the water quality. Ask us if you’re unsure.' },
+        { type: 'p', text: 'A cartridge filter and chemical disinfectant (active oxygen or chlorine) keeps the water clean between fills — for example, over a full weekend. If you’re using the tub several days in a row, skim off any debris now and then and keep an eye on the water quality. Ask us if you’re unsure.' },
         { type: 'callout', text: 'For safe operation, keep the disinfectant tablets in the tub and leave the filter running at all times.' },
         { type: 'heading', text: 'Finishing up' },
         { type: 'p', text: 'Cleaning, filling and maintenance are included in the hot tub fee — you don’t need to drain or clean it yourself.' },
@@ -96,6 +96,8 @@ const SECTIONS = [
           ],
         },
         { type: 'note', text: 'Kun takka on kunnolla syttynyt, käännä kiertoilmapelti takaisin kiinni-asentoon myötäpäivään. Kiertoilmapelti kierrättää palokaasut koko takan kautta ja lämmittää tehokkaammin. Auki ollessaan palokaasut poistuvat suoraan piippuun – parantaen vetoa sytytysvaiheessa, mutta huonontaen polttoainetaloutta.' },
+        { type: 'heading', text: 'Tuhka' },
+        { type: 'p', text: 'Saunarakennuksen (punainen rakennus) varastossa on tuhka-astia. Voit käyttää sitä, jos takan tuhkat tarvitsee tyhjentää.' },
       ],
       en: [
         { type: 'heading', text: 'Terrace fireplace' },
@@ -114,6 +116,8 @@ const SECTIONS = [
           ],
         },
         { type: 'note', text: 'Once the fire is burning well, close the circulation damper by turning it clockwise. This routes the exhaust through the whole masonry fireplace, extracting more heat. Leaving it open sends exhaust straight up the chimney — better draft for lighting, but less fuel-efficient.' },
+        { type: 'heading', text: 'Ashes' },
+        { type: 'p', text: 'There’s an ash bucket in the storage room of the sauna building (the red building) — feel free to use it if the fireplace ashes need emptying.' },
       ],
     },
   },
@@ -129,14 +133,14 @@ const SECTIONS = [
     },
     body: {
       fi: [
-        { type: 'p', text: 'Keittiö on lähes täysin varusteltu. Mikroaaltouuni löytyy, mutta ilmafritturia ei vielä ole.' },
+        { type: 'p', text: 'Keittiö on lähes täysin varusteltu. Ilmafritturia ei vielä ole.' },
         { type: 'callout', text: 'Aterimet löytyvät sisävetolaatikosta lieden vasemmalta puolelta, ylemmän vetolaatikon takaa.' },
         { type: 'p', text: 'Liesi on erittäin voimakas — tasot yli 9 ja P (pika) polttavat ruoan helposti pohjaan. Liesi lämmittää myös kattilat ja pannut hyvin nopeasti.' },
         { type: 'callout', text: 'Liesituuletin toimii käden heilautuksella tai — huomattavasti helpommin — keittiön pöydällä (lieden lähettyvillä) olevalla kaukosäätimellä.' },
         { type: 'callout', text: 'Astianpesukoneen tabletteja löytyy joko uunin yläpuolella olevasta kaapista tai pesualtaan alla olevasta kaapista.' },
       ],
       en: [
-        { type: 'p', text: 'The kitchen is almost fully equipped, including a microwave — there is currently no air fryer.' },
+        { type: 'p', text: 'The kitchen is almost fully equipped; there is currently no air fryer.' },
         { type: 'callout', text: 'Cutlery is in the inner drawer on the left side of the stove, behind the upper drawer.' },
         { type: 'heading', text: 'Cooking' },
         { type: 'p', text: 'The stove is very powerful: level 9 and above, and the P (boost) setting, will burn food quickly and heat pots and pans in no time.' },
