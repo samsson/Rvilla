@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Rauhanvillantie 4 — House Manual</title>
+    <meta name="description" content="Digital house manual for Rauhanvillantie 4." />
+    <meta name="theme-color" content="#ff385c" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23ff385c'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-name" id="house-name">Rauhanvillantie 4</span>
+          <span class="brand-tagline" id="house-tagline">Ohjekirja</span>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="fi" type="button">FI</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        </div>
+      </header>
+
+      <main id="home-view" class="view">
+        <div class="welcome">
+          <h1 class="welcome-title" id="welcome-title">Tervetuloa huvilalle!</h1>
+          <p class="welcome-text" id="welcome-text"></p>
+        </div>
+
+        <div class="search-wrap" id="search-wrap">
+          <span class="icon" id="search-icon"></span>
+          <input id="search-input" type="search" autocomplete="off" />
+        </div>
+
+        <div class="card-grid" id="card-grid"></div>
+        <p class="no-results" id="no-results" hidden></p>
+      </main>
+
+      <section id="detail-view" class="detail-view" hidden aria-live="polite">
+        <div class="detail-header">
+          <button id="back-btn" class="icon-btn" type="button">
+            <span id="back-icon"></span>
+          </button>
+        </div>
+        <div class="detail-hero">
+          <div class="detail-icon" id="detail-icon"></div>
+          <h2 class="detail-title" id="detail-title"></h2>
+        </div>
+        <div class="detail-body" id="detail-body"></div>
+      </section>
+
+      <footer class="app-footer">Rauhanvillantie 4</footer>
+    </div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
